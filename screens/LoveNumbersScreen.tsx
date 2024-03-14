@@ -26,7 +26,9 @@ import { db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
 //import { calculateExactDrawsSinceLastOut } from "../utils/dateUtils";
+
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
 import LotoDisplay from "../components/LotoDisplay";
 import EuromillionsDisplay from "../components/EuromillionsDisplay";
 import EurodreamsDisplay from "../components/EurodreamsDisplay";
@@ -359,7 +361,7 @@ const Love4NumWidget: FC = () => {
           onChangeText={setPhrase}
         />
         <TouchableOpacity onPress={handleReset}>
-          <MaterialIcons name="refresh" size={24} color="#fff" />
+          <MaterialIcons name="refresh" size={30} color="#fff" />
         </TouchableOpacity>
         <Text style={AppStyles.para}>
           Choisissez le tirage pour générer vos numéros d'amour !
