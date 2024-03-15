@@ -14,11 +14,11 @@ import Ionicons from "react-native-vector-icons/Ionicons"; // Import Ionicons
 
 import { JouerScreenNavigationProp } from "../NavigationTypes";
 //import { AdMobBanner } from "react-native-google-mobile-ads";
-import {
-  BannerAd,
-  TestIds,
-  BannerAdSize,
-} from "react-native-google-mobile-ads";
+// import {
+//   BannerAd,
+//   TestIds,
+//   BannerAdSize,
+// } from "react-native-google-mobile-ads";
 
 // Props du composant incluant le type de navigation
 type Props = {

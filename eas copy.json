@@ -1,23 +1,18 @@
 {
-  "cli": {
-    "version": ">= 3.13.2"
-  },
   "build": {
-    "preview": {
-      "android": {
-        "buildType": "apk"
-      }
-    },
     "development": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
       }
     },
-    "admob-test": {
+    "preview": {
       "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:assembleDebug"
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "ios": {
+        "buildConfiguration": "Release"
       }
     },
     "production": {
