@@ -13,38 +13,27 @@ import { StatusBar } from "expo-status-bar";
 import Ionicons from "react-native-vector-icons/Ionicons"; // Import Ionicons
 
 import { JouerScreenNavigationProp } from "../NavigationTypes";
+//import { AdMobBanner } from "react-native-google-mobile-ads";
+import {
+  BannerAd,
+  TestIds,
+  BannerAdSize,
+} from "react-native-google-mobile-ads";
 
 // Props du composant incluant le type de navigation
 type Props = {
   navigation: JouerScreenNavigationProp;
 };
 
+// interface AdError {
+//   code: number;
+//   message: string;
+//   // Ajoutez d'autres champs observés dans l'objet d'erreur, le cas échéant
+// }
+
 const { width, height } = Dimensions.get("window");
 
 const InfoScreen: React.FC<Props> = ({ navigation }) => {
-  // SplashScreen.preventAutoHideAsync();
-  //const navigation = useNavigation();
-
-  //   const [fontsLoaded, fontError] = useFonts({
-  //     hennypennyregular: require("../assets/fonts/hennypennyregular.ttf"),
-  //     luckiestguyregular: require("../assets/fonts/luckiestguyregular.ttf"),
-  //     lemonregular: require("../assets/fonts/lemon-regular.ttf"),
-  //     ralewaythin: require("../assets/fonts/Raleway-Thin.ttf"),
-  //     robotoregular: require("../assets/fonts/roboto-regular.ttf"),
-  //     roboto700: require("../assets/fonts/roboto-700.ttf"),
-  //     ralewayextraBold: require("../assets/fonts/Raleway-ExtraBold.ttf"),
-  //   });
-
-  //   const onLayoutRootView = useCallback(async () => {
-  //     if (fontsLoaded || fontError) {
-  //       await SplashScreen.hideAsync();
-  //     }
-  //   }, [fontsLoaded, fontError]);
-
-  //   if (!fontsLoaded && !fontError) {
-  //     return null;
-  //   }
-
   return (
     <ScrollView style={styles.scrollView}>
       <StatusBar style="light" />
@@ -54,9 +43,6 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           style={styles.image}
           resizeMode="cover"
         />
-        {/* <Text style={styles.title}>
-          Transformez vos mots en numéros de chance!
-        </Text> */}
 
         {/* Début de l'effet néon intégré */}
         <View style={styles.neonContainer}>
@@ -76,6 +62,17 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           l'amour, l'espoir, et la positivité en numéros porte-bonheur pour des
           jeux de loteries françaises.
         </Text>
+
+        {/* <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <BannerAd
+            unitId={TestIds.BANNER} // ID de test pour une bannière
+            size={BannerAdSize.FULL_BANNER}
+            onAdFailedToLoad={(error) => console.error(error)}
+          />
+        </View> */}
+
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
           <Text style={styles.para2b}>5 numéros (1 - 49)</Text>

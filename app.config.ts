@@ -1,5 +1,3 @@
-//app.config.ts
-
 import "dotenv/config";
 
 export default {
@@ -30,6 +28,10 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
+      infoPlist: {
+        NSUserTrackingUsageDescription:
+          "Cette application recueille des données pour vous proposer des publicités personnalisées. Acceptez-vous d'être suivi à des fins publicitaires ?",
+      },
     },
     android: {
       adaptiveIcon: {
@@ -53,6 +55,9 @@ export default {
       storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       appId: process.env.FIREBASE_APP_ID,
+      // "react-native-google-mobile-ads": {
+      //   android_app_id: "ca-app-pub-6996110830232375~7007890694",
+      // },
     },
   },
 };
