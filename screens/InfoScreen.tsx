@@ -14,11 +14,11 @@ import Ionicons from "react-native-vector-icons/Ionicons"; // Import Ionicons
 
 import { JouerScreenNavigationProp } from "../NavigationTypes";
 //import { AdMobBanner } from "react-native-google-mobile-ads";
-// import {
-//   BannerAd,
-//   TestIds,
-//   BannerAdSize,
-// } from "react-native-google-mobile-ads";
+import {
+  BannerAd,
+  TestIds,
+  BannerAdSize,
+} from "react-native-google-mobile-ads";
 
 // Props du composant incluant le type de navigation
 type Props = {
@@ -63,7 +63,7 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           jeux de loteries françaises.
         </Text>
 
-        {/* <View
+        <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <BannerAd
@@ -71,7 +71,7 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
             size={BannerAdSize.FULL_BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View> */}
+        </View>
 
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
