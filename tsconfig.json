@@ -18,7 +18,8 @@
     "screens/*.tsx",
     "legal/*.tsx",
     "utils/*.ts",
-    "styles/*.ts"
+    "styles/*.ts",
+    "app.config.js"
   ],
   "exclude": [
     "node_modules",

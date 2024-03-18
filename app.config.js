@@ -55,10 +55,9 @@ module.exports = {
       storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       appId: process.env.FIREBASE_APP_ID,
-
-      "react-native-google-mobile-ads": {
-        android_app_id: "ca-app-pub-6996110830232375~7007890694",
-      },
     },
+  },
+  "react-native-google-mobile-ads": {
+    android_app_id: "ca-app-pub-6996110830232375~7007890694",
   },
 };
