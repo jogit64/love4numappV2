@@ -21,6 +21,7 @@ module.exports = {
             "./assets/fonts/luckiestguyregular.ttf",
             "./assets/fonts/hennypennyregular.ttf",
             "./assets/fonts/roboto-700.ttf",
+            "./assets/fonts/MadimiOneRegular.ttf",
           ],
         },
       ],

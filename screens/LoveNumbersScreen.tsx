@@ -50,6 +50,8 @@ const { width, height } = Dimensions.get("window");
 
 const Love4NumWidget: FC = () => {
   //TODO ! GESTION DE LA PUB
+  const [adShowCounter, setAdShowCounter] = useState(0);
+
   const interstitialAdRef = useRef<InterstitialAd | null>(null);
 
   useEffect(() => {
@@ -85,14 +87,19 @@ const Love4NumWidget: FC = () => {
   }, []);
 
   const showAdIfNeeded = () => {
-    if (interstitialAdRef.current) {
+    // Afficher une annonce au premier tirage, puis après chaque 3 actions (0, 3, 6, ...)
+    const adThreshold = 3;
+    if (adShowCounter % adThreshold === 0 && interstitialAdRef.current) {
       interstitialAdRef.current.show().catch((error) => {
         console.error(
           "Erreur lors de l'affichage de l'annonce interstitielle:",
           error
         );
-        // La tentative d'affichage a échoué, peut-être parce que l'annonce n'est pas chargée, vous pouvez décider de recharger ici
       });
+      setAdShowCounter(adShowCounter + 1); // Incrémenter après avoir montré l'annonce
+    } else {
+      // Incrémenter le compteur si l'annonce n'est pas montrée
+      setAdShowCounter(adShowCounter + 1);
     }
   };
 
@@ -436,14 +443,6 @@ const Love4NumWidget: FC = () => {
                 genererNumerosLoto("loto");
               }
             }}
-            // onPress={() => {
-            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
-            //   genererNumerosLoto("loto");
-            // }}
-            //onPress={() => showAdIfNeeded(() => genererNumerosLoto("loto"))}
-            //onPress={() => genererNumerosLoto("loto")}
-            // imageSource={require("../assets/loto.png")}
-            // label="Loto"
             imageSource={require("../assets/iconlov4.png")}
             label="Classique"
             jeuId="loto"
@@ -459,16 +458,6 @@ const Love4NumWidget: FC = () => {
                 genererNumerosLoto("euromillions");
               }
             }}
-            // onPress={() => {
-            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
-            //   genererNumerosLoto("euromillions");
-            // }}
-            // onPress={() =>
-            //   showAdIfNeeded(() => genererNumerosLoto("euromillions"))
-            // }
-            //onPress={() => genererNumerosLoto("euromillions")}
-            // imageSource={require("../assets/euromillions.png")}
-            // label="Euromillions"
             imageSource={require("../assets/iconlov4_5.png")}
             label="Européen"
             jeuId="euromillions"
@@ -484,16 +473,6 @@ const Love4NumWidget: FC = () => {
                 genererNumerosLoto("eurodreams");
               }
             }}
-            // onPress={() => {
-            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
-            //   genererNumerosLoto("eurodreams");
-            // }}
-            // onPress={() =>
-            //   showAdIfNeeded(() => genererNumerosLoto("eurodreams"))
-            // }
-            //onPress={() => genererNumerosLoto("eurodreams")}
-            // imageSource={require("../assets/dreams.png")}
-            // label="Eurodreams"
             imageSource={require("../assets/iconlov4_3.png")}
             label="Rêves"
             jeuId="eurodreams"

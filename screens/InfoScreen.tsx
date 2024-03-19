@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    fontFamily: "hennypennyregular",
+    fontFamily: "MadimiOneRegular",
     //color: "#FF48C4",
     color: "#FFFB00",
     lineHeight: 40,
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
   },
   neonText: {
     fontSize: 30,
-    fontFamily: "hennypennyregular",
+    fontFamily: "MadimiOneRegular",
     //color: "#FF48C4",
     color: "#FFFB00",
     lineHeight: 50,
