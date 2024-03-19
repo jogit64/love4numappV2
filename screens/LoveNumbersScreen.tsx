@@ -419,7 +419,7 @@ const Love4NumWidget: FC = () => {
           onChangeText={setPhrase}
         />
         <TouchableOpacity onPress={handleReset}>
-          <MaterialIcons name="refresh" size={30} color="#fff" />
+          <MaterialIcons name="refresh" size={40} color="#ccc" />
         </TouchableOpacity>
         <Text style={AppStyles.para}>
           Choisissez le tirage pour générer vos numéros d'amour !
