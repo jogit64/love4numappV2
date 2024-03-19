@@ -14,11 +14,16 @@ import Ionicons from "react-native-vector-icons/Ionicons"; // Import Ionicons
 
 import { JouerScreenNavigationProp } from "../NavigationTypes";
 //import { AdMobBanner } from "react-native-google-mobile-ads";
+import Constants from "expo-constants";
 import {
   BannerAd,
+  InterstitialAd,
+  AdEventType,
   TestIds,
   BannerAdSize,
 } from "react-native-google-mobile-ads";
+
+import { adMobConfig } from "../adConfig"; // Mettez à jour avec le chemin d'accès correct
 
 // Props du composant incluant le type de navigation
 type Props = {
@@ -62,14 +67,28 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           l'amour, l'espoir, et la positivité en numéros porte-bonheur pour des
           jeux de loteries françaises.
         </Text>
-
         <View style={styles.ban1}>
+          <BannerAd
+            unitId={adMobConfig.bannerId}
+            size={BannerAdSize.BANNER}
+            onAdFailedToLoad={(error) => console.error(error)}
+          />
+        </View>
+        <View style={styles.ban1}>
+          <BannerAd
+            unitId={adMobConfig.bannerId}
+            size={BannerAdSize.LARGE_BANNER}
+            onAdFailedToLoad={(error) => console.error(error)}
+          />
+        </View>
+
+        {/* <View style={styles.ban1}>
           <BannerAd
             unitId={TestIds.BANNER} // ID de test pour une bannière
             size={BannerAdSize.FULL_BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View>
+        </View> */}
 
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
@@ -170,6 +189,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingTop: 25,
     paddingBottom: 20,
+  },
+
+  ban1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
   },
 
   para: {
@@ -280,13 +306,6 @@ const styles = StyleSheet.create({
     textShadowColor: "#FF48C4", // Utilisez la même couleur pour l'ombre
     textShadowOffset: { width: 5, height: 5 },
     textShadowRadius: 10, // Rayon de l'ombre pour l'effet glow
-  },
-
-  ban1: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 30,
   },
 });
 

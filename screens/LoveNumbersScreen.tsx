@@ -1,5 +1,6 @@
 // LoveNumbersScreen.tsx
-import React, { useState, FC } from "react";
+import React, { useState, FC, useEffect, useCallback, useRef } from "react";
+
 import {
   View,
   Text,
@@ -17,7 +18,7 @@ import seedrandom from "seedrandom";
 import { useFonts } from "expo-font";
 
 import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
+//import { useCallback } from "react";
 
 import { db } from "../firebaseConfig";
 
@@ -37,9 +38,66 @@ import CustomLoader from "../components/CustomLoader";
 import { Stat } from "../GameTypes";
 import { GameSelectorProps } from "../GameTypes";
 
+import {
+  InterstitialAd,
+  AdEventType,
+  TestIds,
+} from "react-native-google-mobile-ads";
+
+import { adMobConfig } from "../adConfig"; // Ajustez le chemin selon votre structure de dossier
+
 const { width, height } = Dimensions.get("window");
 
 const Love4NumWidget: FC = () => {
+  //TODO ! GESTION DE LA PUB
+  const interstitialAdRef = useRef<InterstitialAd | null>(null);
+
+  useEffect(() => {
+    const loadInterstitialAd = () => {
+      // Crée une nouvelle annonce
+      const interstitialAd = InterstitialAd.createForAdRequest(
+        adMobConfig.interstitialId,
+        {
+          requestNonPersonalizedAdsOnly: true,
+        }
+      );
+
+      // Ajoute un écouteur pour quand l'annonce est chargée
+      interstitialAd.addAdEventListener(AdEventType.LOADED, () => {
+        console.log("Annonce interstitielle chargée");
+        // Met à jour la référence avec la nouvelle annonce chargée
+        interstitialAdRef.current = interstitialAd;
+      });
+
+      // Ajoute un écouteur pour quand l'annonce est fermée
+      interstitialAd.addAdEventListener(AdEventType.CLOSED, () => {
+        console.log("Annonce interstitielle fermée");
+        // L'annonce a été fermée, charge une nouvelle annonce
+        loadInterstitialAd();
+      });
+
+      // Charge l'annonce
+      interstitialAd.load();
+    };
+
+    // Appelle la fonction pour charger l'annonce initialement
+    loadInterstitialAd();
+  }, []);
+
+  const showAdIfNeeded = () => {
+    if (interstitialAdRef.current) {
+      interstitialAdRef.current.show().catch((error) => {
+        console.error(
+          "Erreur lors de l'affichage de l'annonce interstitielle:",
+          error
+        );
+        // La tentative d'affichage a échoué, peut-être parce que l'annonce n'est pas chargée, vous pouvez décider de recharger ici
+      });
+    }
+  };
+
+  //TODO ! FIN GESTION DE LA PUB
+
   const handleReset = () => {
     // Réinitialisation pour le Loto
     setLotoNumbers([]);
@@ -368,7 +426,12 @@ const Love4NumWidget: FC = () => {
         </Text>
         <View style={AppStyles.gameSelection}>
           <GameSelector
-            onPress={() => genererNumerosLoto("loto")}
+            onPress={() => {
+              showAdIfNeeded(); // Affiche l'annonce interstitielle
+              genererNumerosLoto("loto");
+            }}
+            //onPress={() => showAdIfNeeded(() => genererNumerosLoto("loto"))}
+            //onPress={() => genererNumerosLoto("loto")}
             // imageSource={require("../assets/loto.png")}
             // label="Loto"
             imageSource={require("../assets/iconlov4.png")}
@@ -376,7 +439,14 @@ const Love4NumWidget: FC = () => {
             jeuId="loto"
           />
           <GameSelector
-            onPress={() => genererNumerosLoto("euromillions")}
+            onPress={() => {
+              showAdIfNeeded(); // Affiche l'annonce interstitielle
+              genererNumerosLoto("euromillions");
+            }}
+            // onPress={() =>
+            //   showAdIfNeeded(() => genererNumerosLoto("euromillions"))
+            // }
+            //onPress={() => genererNumerosLoto("euromillions")}
             // imageSource={require("../assets/euromillions.png")}
             // label="Euromillions"
             imageSource={require("../assets/iconlov4_5.png")}
@@ -384,7 +454,14 @@ const Love4NumWidget: FC = () => {
             jeuId="euromillions"
           />
           <GameSelector
-            onPress={() => genererNumerosLoto("eurodreams")}
+            onPress={() => {
+              showAdIfNeeded(); // Affiche l'annonce interstitielle
+              genererNumerosLoto("eurodreams");
+            }}
+            // onPress={() =>
+            //   showAdIfNeeded(() => genererNumerosLoto("eurodreams"))
+            // }
+            //onPress={() => genererNumerosLoto("eurodreams")}
             // imageSource={require("../assets/dreams.png")}
             // label="Eurodreams"
             imageSource={require("../assets/iconlov4_3.png")}
