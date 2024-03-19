@@ -63,9 +63,7 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           jeux de loteries françaises.
         </Text>
 
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
+        <View style={styles.ban1}>
           <BannerAd
             unitId={TestIds.BANNER} // ID de test pour une bannière
             size={BannerAdSize.FULL_BANNER}
@@ -282,6 +280,13 @@ const styles = StyleSheet.create({
     textShadowColor: "#FF48C4", // Utilisez la même couleur pour l'ombre
     textShadowOffset: { width: 5, height: 5 },
     textShadowRadius: 10, // Rayon de l'ombre pour l'effet glow
+  },
+
+  ban1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
   },
 });
 

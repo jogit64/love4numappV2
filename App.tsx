@@ -1,4 +1,3 @@
-// Au début du fichier, ajoutez l'importation de SafeAreaProvider
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import React, { useState, useEffect, useCallback } from "react";
 import { NavigationContainer } from "@react-navigation/native";
