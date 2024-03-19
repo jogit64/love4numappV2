@@ -23,7 +23,7 @@ import {
   BannerAdSize,
 } from "react-native-google-mobile-ads";
 
-import { adMobConfig } from "../adConfig"; // Mettez à jour avec le chemin d'accès correct
+import { adMobConfig } from "../adConfig";
 
 // Props du composant incluant le type de navigation
 type Props = {
@@ -48,7 +48,6 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           style={styles.image}
           resizeMode="cover"
         />
-
         {/* Début de l'effet néon intégré */}
         <View style={styles.neonContainer}>
           <Text style={[styles.neonText, styles.shadow]}>
@@ -61,12 +60,12 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           </Text>
         </View>
         {/* Fin de l'effet néon intégré */}
-
         <Text style={styles.para}>
           Avec notre algorithme unique basé sur le nombre d'or, convertissez
           l'amour, l'espoir, et la positivité en numéros porte-bonheur pour des
           jeux de loteries françaises.
         </Text>
+
         <View style={styles.ban1}>
           <BannerAd
             unitId={adMobConfig.bannerId}
@@ -74,14 +73,14 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
             onAdFailedToLoad={(error) => console.error(error)}
           />
         </View>
-        <View style={styles.ban1}>
+
+        {/* <View style={styles.ban1}>
           <BannerAd
             unitId={adMobConfig.bannerId}
             size={BannerAdSize.LARGE_BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View>
-
+        </View> */}
         {/* <View style={styles.ban1}>
           <BannerAd
             unitId={TestIds.BANNER} // ID de test pour une bannière
@@ -89,7 +88,6 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
             onAdFailedToLoad={(error) => console.error(error)}
           />
         </View> */}
-
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
           <Text style={styles.para2b}>5 numéros (1 - 49)</Text>
@@ -105,7 +103,6 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           <Text style={styles.para2b}>6 numéros (1 - 40)</Text>
           <Text style={styles.para2b}>1 numéros complémentaires (1 - 5)</Text>
         </View>
-
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("Jouer")}
@@ -114,6 +111,14 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           {/* Icon inside the button */}
           <Text style={styles.buttonText}>C'est parti !</Text>
         </TouchableOpacity>
+
+        <View style={styles.ban1}>
+          <BannerAd
+            unitId={adMobConfig.bannerId}
+            size={BannerAdSize.BANNER}
+            onAdFailedToLoad={(error) => console.error(error)}
+          />
+        </View>
 
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Vibrations Positives</Text>

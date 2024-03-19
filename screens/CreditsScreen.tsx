@@ -11,6 +11,15 @@ import {
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../NavigationTypes"; // Ajustez le chemin selon l'emplacement de votre fichier
 
+import {
+  BannerAd,
+  InterstitialAd,
+  AdEventType,
+  TestIds,
+  BannerAdSize,
+} from "react-native-google-mobile-ads";
+import { adMobConfig } from "../adConfig";
+
 type CreditsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   "Crédits"
@@ -32,27 +41,32 @@ const CreditsScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Crédits & Informations</Text>
-
       <Text style={styles.text}>
-        Merci d'utiliser [Nom de l'App] ! Nous travaillons constamment pour
-        améliorer votre expérience.
+        Merci d'utiliser Love4Num ! Nous travaillons constamment pour améliorer
+        votre expérience.
       </Text>
       {/* Remplacez openURL par navigation.navigate pour les écrans internes */}
       <TouchableOpacity onPress={() => navigation.navigate("LegalMentions")}>
         <Text style={styles.lien}>Mentions Légales</Text>
       </TouchableOpacity>
-
       <TouchableOpacity onPress={() => navigation.navigate("PrivacyPolicy")}>
         <Text style={styles.lien}>Politique de confidentialité</Text>
       </TouchableOpacity>
 
+      <View style={styles.ban1}>
+        <BannerAd
+          unitId={adMobConfig.bannerId}
+          size={BannerAdSize.LARGE_BANNER}
+          onAdFailedToLoad={(error) => console.error(error)}
+        />
+      </View>
+
       <Text style={styles.text}>
         Pour toute question ou retour, n'hésitez pas à nous contacter :
       </Text>
-      <TouchableOpacity onPress={() => openURL("mailto:support@votreapp.com")}>
-        <Text style={styles.lien}>support@votreapp.com</Text>
+      <TouchableOpacity onPress={() => openURL("mailto:contact@johannr.fr")}>
+        <Text style={styles.lien}>contact@johannr.fr</Text>
       </TouchableOpacity>
-
       <Text style={styles.text}>
         Vous aimez notre application ? Laissez-nous un avis :
       </Text>
@@ -63,9 +77,8 @@ const CreditsScreen: React.FC<Props> = ({ navigation }) => {
       >
         <Text style={styles.lien}>Évaluer sur Google Play</Text>
       </TouchableOpacity>
-
       <Text style={styles.footerText}>
-        © [Année] [Nom de votre société]. Tous droits réservés.
+        © 2024 johannr.fr. Tous droits réservés.
       </Text>
     </ScrollView>
   );
@@ -113,6 +126,14 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginHorizontal: 20,
     lineHeight: 25,
+  },
+
+  ban1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 25,
+    marginBottom: 30,
   },
 });
 
