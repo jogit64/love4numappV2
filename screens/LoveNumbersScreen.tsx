@@ -427,9 +427,19 @@ const Love4NumWidget: FC = () => {
         <View style={AppStyles.gameSelection}>
           <GameSelector
             onPress={() => {
-              showAdIfNeeded(); // Affiche l'annonce interstitielle
-              genererNumerosLoto("loto");
+              if (!phrase.trim()) {
+                alert(
+                  "Veuillez entrer une phrase ou des mots d'amour avant de générer des numéros."
+                );
+              } else {
+                showAdIfNeeded(); // Affiche l'annonce interstitielle seulement si la phrase n'est pas vide
+                genererNumerosLoto("loto");
+              }
             }}
+            // onPress={() => {
+            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
+            //   genererNumerosLoto("loto");
+            // }}
             //onPress={() => showAdIfNeeded(() => genererNumerosLoto("loto"))}
             //onPress={() => genererNumerosLoto("loto")}
             // imageSource={require("../assets/loto.png")}
@@ -440,9 +450,19 @@ const Love4NumWidget: FC = () => {
           />
           <GameSelector
             onPress={() => {
-              showAdIfNeeded(); // Affiche l'annonce interstitielle
-              genererNumerosLoto("euromillions");
+              if (!phrase.trim()) {
+                alert(
+                  "Veuillez entrer une phrase ou des mots d'amour avant de générer des numéros."
+                );
+              } else {
+                showAdIfNeeded(); // Affiche l'annonce interstitielle seulement si la phrase n'est pas vide
+                genererNumerosLoto("euromillions");
+              }
             }}
+            // onPress={() => {
+            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
+            //   genererNumerosLoto("euromillions");
+            // }}
             // onPress={() =>
             //   showAdIfNeeded(() => genererNumerosLoto("euromillions"))
             // }
@@ -455,9 +475,19 @@ const Love4NumWidget: FC = () => {
           />
           <GameSelector
             onPress={() => {
-              showAdIfNeeded(); // Affiche l'annonce interstitielle
-              genererNumerosLoto("eurodreams");
+              if (!phrase.trim()) {
+                alert(
+                  "Veuillez entrer une phrase ou des mots d'amour avant de générer des numéros."
+                );
+              } else {
+                showAdIfNeeded(); // Affiche l'annonce interstitielle seulement si la phrase n'est pas vide
+                genererNumerosLoto("eurodreams");
+              }
             }}
+            // onPress={() => {
+            //   showAdIfNeeded(); // Affiche l'annonce interstitielle
+            //   genererNumerosLoto("eurodreams");
+            // }}
             // onPress={() =>
             //   showAdIfNeeded(() => genererNumerosLoto("eurodreams"))
             // }
