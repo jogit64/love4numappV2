@@ -55,7 +55,7 @@ const CreditsScreen: React.FC<Props> = ({ navigation }) => {
 
       <View style={styles.ban1}>
         <BannerAd
-          unitId={adMobConfig.bannerId}
+          unitId={adMobConfig.creditBannerId}
           size={BannerAdSize.LARGE_BANNER}
           onAdFailedToLoad={(error) => console.error(error)}
         />

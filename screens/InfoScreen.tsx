@@ -68,7 +68,7 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
 
         <View style={styles.ban1}>
           <BannerAd
-            unitId={adMobConfig.bannerId}
+            unitId={adMobConfig.infoBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
@@ -103,7 +103,7 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
 
         <View style={styles.ban1}>
           <BannerAd
-            unitId={adMobConfig.bannerId}
+            unitId={adMobConfig.infoBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />

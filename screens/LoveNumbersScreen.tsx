@@ -89,19 +89,21 @@ const Love4NumWidget: FC = () => {
   }, []);
 
   const showAdIfNeeded = () => {
-    // Afficher une annonce au premier tirage, puis après chaque 3 actions (0, 3, 6, ...)
+    // Incrémenter le compteur dès le début de la fonction
+    setAdShowCounter(adShowCounter + 1);
+
+    // Ajuster le seuil pour que l'annonce s'affiche à partir du second tirage
     const adThreshold = 3;
-    if (adShowCounter % adThreshold === 0 && interstitialAdRef.current) {
+    // En déduisant 1 de adShowCounter, l'annonce ne s'affichera pas au premier tirage (maintenant 1 % 3 !== 0)
+    // mais s'affichera pour le tirage 2, puis après chaque 3 actions (4, 7, ...)
+    if ((adShowCounter + 1) % adThreshold === 0 && interstitialAdRef.current) {
       interstitialAdRef.current.show().catch((error) => {
         console.error(
           "Erreur lors de l'affichage de l'annonce interstitielle:",
           error
         );
       });
-      setAdShowCounter(adShowCounter + 1); // Incrémenter après avoir montré l'annonce
-    } else {
-      // Incrémenter le compteur si l'annonce n'est pas montrée
-      setAdShowCounter(adShowCounter + 1);
+      // Pas besoin d'incrémenter adShowCounter ici puisqu'il est déjà incrémenté au début de la fonction
     }
   };
 
@@ -482,7 +484,7 @@ const Love4NumWidget: FC = () => {
         </View>
         <View style={AppStyles.ban1}>
           <BannerAd
-            unitId={adMobConfig.bannerId}
+            unitId={adMobConfig.loveBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
