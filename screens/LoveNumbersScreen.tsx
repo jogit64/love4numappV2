@@ -482,13 +482,13 @@ const Love4NumWidget: FC = () => {
             jeuId="eurodreams"
           />
         </View>
-        <View style={AppStyles.ban1}>
+        {/* <View style={AppStyles.ban1}>
           <BannerAd
             unitId={adMobConfig.loveBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View>
+        </View> */}
 
         {/* //todo CHOIX LOTO */}
         {jeuSelectionne === "loto" &&

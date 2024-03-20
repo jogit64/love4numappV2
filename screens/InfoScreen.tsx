@@ -66,13 +66,13 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           jeux de loteries françaises.
         </Text>
 
-        <View style={styles.ban1}>
+        {/* <View style={styles.ban1}>
           <BannerAd
             unitId={adMobConfig.infoBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View>
+        </View> */}
 
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
@@ -101,13 +101,13 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           <Text style={styles.buttonText}>C'est parti !</Text>
         </TouchableOpacity>
 
-        <View style={styles.ban1}>
+        {/* <View style={styles.ban1}>
           <BannerAd
             unitId={adMobConfig.infoBannerId}
             size={BannerAdSize.BANNER}
             onAdFailedToLoad={(error) => console.error(error)}
           />
-        </View>
+        </View> */}
 
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Vibrations Positives</Text>

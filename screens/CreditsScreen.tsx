@@ -53,13 +53,13 @@ const CreditsScreen: React.FC<Props> = ({ navigation }) => {
         <Text style={styles.lien}>Politique de confidentialité</Text>
       </TouchableOpacity>
 
-      <View style={styles.ban1}>
+      {/* <View style={styles.ban1}>
         <BannerAd
           unitId={adMobConfig.creditBannerId}
           size={BannerAdSize.LARGE_BANNER}
           onAdFailedToLoad={(error) => console.error(error)}
         />
-      </View>
+      </View> */}
 
       <Text style={styles.text}>
         Pour toute question ou retour, n'hésitez pas à nous contacter :
