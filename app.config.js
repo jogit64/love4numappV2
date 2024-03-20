@@ -4,7 +4,7 @@ module.exports = {
   expo: {
     name: "love4num",
     slug: "love4num",
-    version: "1.0.0", // Mettez à jour cette version si nécessaire
+    version: "1.1.0", // Mettez à jour cette version si nécessaire
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
@@ -41,7 +41,7 @@ module.exports = {
       },
       permissions: [],
       package: "com.souda.love4num",
-      versionCode: 2, // Ajoutez cette ligne avec le nouveau code de version
+      //versionCode: 2, // Ajoutez cette ligne avec le nouveau code de version
     },
     web: {
       favicon: "./assets/favicon.png",
