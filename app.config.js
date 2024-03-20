@@ -4,7 +4,7 @@ module.exports = {
   expo: {
     name: "love4num",
     slug: "love4num",
-    version: "1.0.0",
+    version: "1.0.0", // Mettez à jour cette version si nécessaire
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
@@ -41,6 +41,7 @@ module.exports = {
       },
       permissions: [],
       package: "com.souda.love4num",
+      versionCode: 2, // Ajoutez cette ligne avec le nouveau code de version
     },
     web: {
       favicon: "./assets/favicon.png",
@@ -56,8 +57,6 @@ module.exports = {
       storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       appId: process.env.FIREBASE_APP_ID,
-      // admobBannerId: "ca-app-pub-3940256099942544/9214589741", // Exemple d'ID de bannière pour les tests
-      // admobInterstitialId: "ca-app-pub-3940256099942544/4411468910", // Exemple d'ID interstitiel pour les tests
     },
   },
   "react-native-google-mobile-ads": {
