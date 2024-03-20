@@ -52,11 +52,11 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
         <View style={styles.neonContainer}>
           <Text style={[styles.neonText, styles.shadow]}>
             {" "}
-            Transformez vos mots en numéros de chance!
+            Transformez vos mots en numéros chance!
           </Text>
           <Text style={styles.neonText}>
             {" "}
-            Transformez vos mots en numéros de chance!
+            Transformez vos mots en numéros chance!
           </Text>
         </View>
         {/* Fin de l'effet néon intégré */}
@@ -74,34 +74,23 @@ const InfoScreen: React.FC<Props> = ({ navigation }) => {
           />
         </View>
 
-        {/* <View style={styles.ban1}>
-          <BannerAd
-            unitId={adMobConfig.bannerId}
-            size={BannerAdSize.LARGE_BANNER}
-            onAdFailedToLoad={(error) => console.error(error)}
-          />
-        </View> */}
-        {/* <View style={styles.ban1}>
-          <BannerAd
-            unitId={TestIds.BANNER} // ID de test pour une bannière
-            size={BannerAdSize.FULL_BANNER}
-            onAdFailedToLoad={(error) => console.error(error)}
-          />
-        </View> */}
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage classique</Text>
           <Text style={styles.para2b}>5 numéros (1 - 49)</Text>
           <Text style={styles.para2b}>1 numéros complémentaire (1 - 10)</Text>
+          <Text style={styles.para2b}>Lundi - Mercredi - Samedi</Text>
         </View>
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage européen</Text>
           <Text style={styles.para2b}>5 numéros (1 - 50)</Text>
           <Text style={styles.para2b}>2 numéros complémentaires (1 - 12)</Text>
+          <Text style={styles.para2b}>Mardi - Vendredi</Text>
         </View>
         <View style={styles.para2Bloc}>
           <Text style={styles.para2r}>Tirage rêves</Text>
           <Text style={styles.para2b}>6 numéros (1 - 40)</Text>
           <Text style={styles.para2b}>1 numéros complémentaires (1 - 5)</Text>
+          <Text style={styles.para2b}>Lundi - Jeudi</Text>
         </View>
         <TouchableOpacity
           style={styles.button}
@@ -182,18 +171,9 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   image: {
-    width: width * 0.8,
-    height: height * 0.4,
-  },
-  title: {
-    fontSize: 30,
-    fontFamily: "MadimiOneRegular",
-    //color: "#FF48C4",
-    color: "#FFFB00",
-    lineHeight: 40,
-    textAlign: "center",
-    paddingTop: 25,
-    paddingBottom: 20,
+    width: width * 0.7,
+    height: height * 0.2,
+    marginTop: 10,
   },
 
   ban1: {
@@ -205,21 +185,16 @@ const styles = StyleSheet.create({
 
   para: {
     fontSize: 16,
-    //fontFamily: "lemonregular",
-    //fontFamily: "ralewaythin",
-    //fontFamily: "ralewayextraBold",
     fontFamily: "robotoregular",
-    //color: "#e0b0ff",
     color: "#fff",
     textAlign: "center",
-    // marginBottom: 15,
     marginTop: 5,
     marginHorizontal: 20,
     lineHeight: 25,
   },
   button: {
-    flexDirection: "row", // Ensure icon and text are in a row
-    alignItems: "center", // Align items in the center
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: 60,
     backgroundColor: "#FF48C4",
     padding: 10,
@@ -227,7 +202,7 @@ const styles = StyleSheet.create({
     marginBottom: 35,
   },
   buttonText: {
-    marginLeft: 10, // Add space between icon and text
+    marginLeft: 10,
     color: "#FFFFFF",
     textAlign: "center",
     fontSize: 16,
@@ -236,16 +211,11 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "flex-start",
     alignItems: "center",
-    //minHeight: height,
     paddingTop: 25,
   },
   para2r: {
-    fontSize: 14,
-    //fontFamily: "lemonregular",
-    //fontFamily: "ralewaythin",
-    //fontFamily: "ralewayextraBold",
+    fontSize: 16,
     fontFamily: "robotoregular",
-    //color: "#e0b0ff",
     color: "#FF48C4",
     textAlign: "center",
     marginBottom: 15,
@@ -257,60 +227,45 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "flex-start",
     alignItems: "center",
-    //minHeight: height,
     marginBottom: 95,
   },
   lienBloc: {
     flexGrow: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    //minHeight: height,
     marginBottom: 95,
   },
   para2b: {
-    fontSize: 14,
-    //fontFamily: "lemonregular",
-    //fontFamily: "ralewaythin",
-    //fontFamily: "ralewayextraBold",
+    fontSize: 16,
     fontFamily: "robotoregular",
-    //color: "#e0b0ff",
     color: "#FFF",
     textAlign: "center",
-    // marginBottom: 15,
-    // marginTop: 5,
     marginHorizontal: 20,
     lineHeight: 25,
   },
   para2bn: {
     fontSize: 14,
-    //fontFamily: "lemonregular",
-    //fontFamily: "ralewaythin",
-    //fontFamily: "ralewayextraBold",
     fontFamily: "robotoregular",
-    //color: "#e0b0ff",
     color: "#FFF",
     textAlign: "center",
-
     marginHorizontal: 20,
     lineHeight: 25,
   },
 
-  neonContainer: {
-    // styles du container si nécessaire
-  },
+  neonContainer: {},
   neonText: {
-    fontSize: 30,
+    fontSize: 35,
     fontFamily: "MadimiOneRegular",
-    //color: "#FF48C4",
-    color: "#FFFB00",
+    color: "#fff",
     lineHeight: 50,
     textAlign: "center",
+    marginVertical: 10,
   },
   shadow: {
     position: "absolute",
-    textShadowColor: "#FF48C4", // Utilisez la même couleur pour l'ombre
+    textShadowColor: "#FF48C4",
     textShadowOffset: { width: 5, height: 5 },
-    textShadowRadius: 10, // Rayon de l'ombre pour l'effet glow
+    textShadowRadius: 10,
   },
 });
 

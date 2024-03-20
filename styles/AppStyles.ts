@@ -287,6 +287,12 @@ const AppStyles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 16,
   },
+  ban1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
+  },
 });
 
 export default AppStyles;

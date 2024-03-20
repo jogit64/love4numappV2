@@ -42,6 +42,8 @@ import {
   InterstitialAd,
   AdEventType,
   TestIds,
+  BannerAd,
+  BannerAdSize,
 } from "react-native-google-mobile-ads";
 
 import { adMobConfig } from "../adConfig"; // Ajustez le chemin selon votre structure de dossier
@@ -476,6 +478,13 @@ const Love4NumWidget: FC = () => {
             imageSource={require("../assets/iconlov4_3.png")}
             label="Rêves"
             jeuId="eurodreams"
+          />
+        </View>
+        <View style={AppStyles.ban1}>
+          <BannerAd
+            unitId={adMobConfig.bannerId}
+            size={BannerAdSize.BANNER}
+            onAdFailedToLoad={(error) => console.error(error)}
           />
         </View>
 
