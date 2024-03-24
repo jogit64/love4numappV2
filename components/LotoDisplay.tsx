@@ -49,7 +49,8 @@ const LotoDisplay: React.FC<LotoDisplayProps> = ({
                   <Text style={AppStyles.statText}>
                     {statsNumeros[index]?.derniereSortie
                       ? `${calculateExactDrawsSinceLastOut(
-                          statsNumeros[index]?.derniereSortie
+                          statsNumeros[index]?.derniereSortie,
+                          "loto"
                         )} tirages`
                       : "Données non disponibles"}
                   </Text>
@@ -75,7 +76,8 @@ const LotoDisplay: React.FC<LotoDisplayProps> = ({
                   <MaterialIcons name="history" size={20} color="#ffffff" />
                   <Text style={AppStyles.statText}>
                     {calculateExactDrawsSinceLastOut(
-                      chanceNumberStats.derniereSortie
+                      chanceNumberStats.derniereSortie,
+                      "loto"
                     )}{" "}
                     tirages
                   </Text>

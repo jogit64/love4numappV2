@@ -19,7 +19,7 @@ export const adMobConfig = {
   // * optionnel dans app.config.js (d'ailleurs actuellement commentée)
   // *
 
-  // TODO POUR CTIVER LA VERSION DE TEST
+  //  TODO POUR CTIVER LA VERSION DE TEST
   // ! ID's DE TEST
 
   infoBannerId: "ca-app-pub-3940256099942544/9214589741", // TEST - les 2 banner de infoscreen

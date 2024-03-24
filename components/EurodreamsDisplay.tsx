@@ -54,7 +54,8 @@ const EurodreamsDisplay: React.FC<EurodreamsDisplayProps> = ({
                   <Text style={AppStyles.statText}>
                     {stat?.derniereSortie
                       ? `${calculateExactDrawsSinceLastOut(
-                          stat.derniereSortie
+                          stat.derniereSortie,
+                          "eurodreams"
                         )} tirages`
                       : "N/A"}
                   </Text>
@@ -79,7 +80,8 @@ const EurodreamsDisplay: React.FC<EurodreamsDisplayProps> = ({
                   <Text style={AppStyles.statText}>
                     {statsDream.derniereSortie
                       ? `${calculateExactDrawsSinceLastOut(
-                          statsDream.derniereSortie
+                          statsDream.derniereSortie,
+                          "eurodreams"
                         )} tirages`
                       : "N/A"}
                   </Text>

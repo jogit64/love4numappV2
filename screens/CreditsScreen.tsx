@@ -72,10 +72,16 @@ const CreditsScreen: React.FC<Props> = ({ navigation }) => {
       </Text>
       <TouchableOpacity
         onPress={() =>
-          openURL("https://play.google.com/store/apps/details?id=votre.app.id")
+          openURL(
+            "https://play.google.com/store/apps/details?id=com.souda.love4num"
+          )
         }
       >
         <Text style={styles.lien}>Évaluer sur Google Play</Text>
+      </TouchableOpacity>
+      <Text style={styles.text}>Retrouvez Love4Num sur le web</Text>
+      <TouchableOpacity onPress={() => openURL("https://love4num.com/")}>
+        <Text style={styles.lien}>Visiter le site</Text>
       </TouchableOpacity>
       <Text style={styles.footerText}>
         © 2024 johannr.fr. Tous droits réservés.

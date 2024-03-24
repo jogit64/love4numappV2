@@ -29,6 +29,8 @@ import { doc, getDoc } from "firebase/firestore";
 //import { calculateExactDrawsSinceLastOut } from "../utils/dateUtils";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 import LotoDisplay from "../components/LotoDisplay";
 import EuromillionsDisplay from "../components/EuromillionsDisplay";
@@ -421,17 +423,19 @@ const Love4NumWidget: FC = () => {
           Entrez une phrase ou des mots d'amour pour voir comment l'univers
           transforme votre message en numéros de chance.
         </Text>
-        <TextInput
-          style={AppStyles.input}
-          placeholder="Entrez votre phrase positive"
-          placeholderTextColor="#e0b0ff"
-          cursorColor={"#e0b0ff"}
-          value={phrase}
-          onChangeText={setPhrase}
-        />
-        <TouchableOpacity onPress={handleReset}>
-          <MaterialIcons name="refresh" size={40} color="#ccc" />
-        </TouchableOpacity>
+        <View style={AppStyles.inputLine}>
+          <TextInput
+            style={AppStyles.input}
+            placeholder="Entrez votre phrase positive"
+            placeholderTextColor="#e0b0ff"
+            cursorColor={"#e0b0ff"}
+            value={phrase}
+            onChangeText={setPhrase}
+          />
+          <TouchableOpacity onPress={handleReset}>
+            <MaterialIcons name="delete" size={26} color="#e0b0ff" />
+          </TouchableOpacity>
+        </View>
         <Text style={AppStyles.para}>
           Choisissez le tirage pour générer vos numéros d'amour !
         </Text>

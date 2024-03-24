@@ -65,7 +65,8 @@ const EuromillionsDisplay: React.FC<EuromillionsDisplayProps> = ({
                   <Text style={AppStyles.statText}>
                     {stat?.derniereSortie
                       ? `${calculateExactDrawsSinceLastOut(
-                          stat?.derniereSortie
+                          stat?.derniereSortie,
+                          "euromillions"
                         )} tirages`
                       : "N/A"}
                   </Text>
@@ -90,7 +91,8 @@ const EuromillionsDisplay: React.FC<EuromillionsDisplayProps> = ({
                   <Text style={AppStyles.statText}>
                     {stat?.derniereSortie
                       ? `${calculateExactDrawsSinceLastOut(
-                          stat?.derniereSortie
+                          stat?.derniereSortie,
+                          "euromillions"
                         )} tirages`
                       : "N/A"}
                   </Text>

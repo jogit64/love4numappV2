@@ -48,16 +48,30 @@ const AppStyles = StyleSheet.create({
     lineHeight: 25,
   },
 
+  inputLine: {
+    //flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    flexWrap: "nowrap",
+    marginTop: 30,
+    marginBottom: 30,
+    //marginHorizontal: 40,
+  },
+
   input: {
     width: width - 40,
     padding: 10,
-    marginBottom: 20,
+    //marginBottom: 20,
+    //marginLeft: 30,
     color: "#e0b0ff",
     //borderRadius: 25,
-    backgroundColor: "#1b1138",
+    //backgroundColor: "#1b1138",
+    backgroundColor: "#0f042c",
     borderBottomWidth: 0.2,
     borderBottomColor: "#bfa2cb",
     textAlign: "center",
+    // marginLeft: 10,
   },
 
   textTirage: {
