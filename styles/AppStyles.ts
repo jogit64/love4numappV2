@@ -113,12 +113,14 @@ const AppStyles = StyleSheet.create({
   },
 
   selectedGame: {
-    backgroundColor: "#ADD8E6", // Bleu clair pour le jeu sélectionné
+    //    backgroundColor: "#ADD8E6", // Bleu clair pour le jeu sélectionné
+    backgroundColor: "#fe64f8", // Bleu clair pour le jeu sélectionné
     // Autres styles nécessaires pour un jeu sélectionné
   },
 
   unselectedGame: {
-    backgroundColor: "#00E676", // Vert (ou tout autre couleur de votre choix) pour les jeux non sélectionnés
+    //backgroundColor: "#00E676",
+    backgroundColor: "#e0b0ff",
     // Autres styles nécessaires pour un jeu non sélectionné
   },
 
