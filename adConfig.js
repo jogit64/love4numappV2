@@ -24,6 +24,6 @@ export const adMobConfig = {
 
   infoBannerId: "ca-app-pub-3940256099942544/9214589741", // TEST - les 2 banner de infoscreen
   loveBannerId: "ca-app-pub-3940256099942544/9214589741", // TEST - la banner sur love4numscreen le tirage
-  interstitialId: "ca-app-pub-3940256099942544/4411468910", // TEST l'intersticiel sur love4numscreen le tirage
+  interstitialId: "ca-app-pub-3940256099942544/1033173712", // TEST l'intersticiel sur love4numscreen le tirage
   creditBannerId: "ca-app-pub-3940256099942544/9214589741", // TEST - la banner large sur creditscreen
 };
