@@ -14,8 +14,9 @@ export const adMobConfig = {
   // creditBannerId: "ca-app-pub-6996110830232375/9976742927", // PROD - la banner large sur creditscreen
 
   // *
-  // *
-  // *
+  // * PENSER A CHANGER versionCode:(numéro)
+  // * dans android/app/build.gradle (et non android/build.gradle)
+  // * optionnel dans app.config.js (d'ailleurs actuellement commentée)
   // *
 
   // TODO POUR CTIVER LA VERSION DE TEST
